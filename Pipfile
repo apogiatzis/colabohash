@@ -10,7 +10,8 @@ pipenv-setup = "*"
 setuptools = "*"
 wheel = "*"
 twine = "*"
-keyring = "==19.2.0"
+secretstorage = {markers = "sys_platform == 'linux'"}
+keyring = "==19.1.0"
 colabohash = {editable = true,path = "."}
 
 [packages]
