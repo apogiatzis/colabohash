@@ -5,6 +5,7 @@ import os
 import os.path as path
 
 from datetime import datetime
+from functools import partial
 from .unzip import unzip_chromediver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -32,6 +33,14 @@ class ColaboHash(object):
         self.terminate_on_finish = terminate_on_finish
         self.keep_open = keep_open
         self.timeout = 60
+        self.on_login_callback = None
+        self.on_run_callback = None
+
+    def set_on_login_callback(self, func, *params):
+        self.on_login_callback = partial(func, *params)
+
+    def set_on_run_callback(self, func, *params):
+        self.on_run_callback = partial(func, *params)
 
     def _setup_chromdriver(self):
         """Initializes ChromeDriver with given options"""
@@ -183,13 +192,15 @@ class ColaboHash(object):
         driver, wait = self._setup_chromdriver()
 
         self._login(driver, wait)
-        # self.on_login()
+        if self.on_login_callback:
+            self.on_login_callback()
         notebook_path = self._render_notebook_with_jinja(hashcat_cmd, discord_webhook_url)
         self._upload_notebook(driver, wait, notebook_path)
         self._change_runtime_gpu(driver, wait)
         self._connect_to_runtime(driver, wait)
         self._run_all_cells(driver, wait)
-        # self.on_notebook_start()
+        if self.on_run_callback:
+            self.on_run_callback()
 
         if self.keep_open:
             try:
