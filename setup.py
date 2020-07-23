@@ -1,6 +1,4 @@
 from setuptools import setup
-
-# read the contents of your README file
 from os import path
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -19,13 +17,12 @@ setup(
         "webencodings==0.5.1",
     ],
     name="colabohash",
-    version="0.0.3",
+    version="0.0.1",
     description="Hashcat with GPU support in Google Colab runtime",
     url="http://github.com/apogiatzis/colabohash",
     author="Antreas Pogiatzis",
     author_email="pogiatzis.c.a@gmail.com",
     license="MIT",
-    package_data={'': ['bin/*']},
     include_package_data=True,
     packages=["colabohash"],
     long_description=long_description,

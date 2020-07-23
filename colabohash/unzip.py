@@ -5,7 +5,7 @@ import os
 import stat
 
 def unzip_chromediver():
-    base_dir = path.join(path.dirname(path.abspath(__file__)), "..", "bin")
+    base_dir = path.join(path.dirname(path.abspath(__file__)), "bin")
 
     os_type = platform.system()
     bin_path = path.join(base_dir, "chromedriver")
