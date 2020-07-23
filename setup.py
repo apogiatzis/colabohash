@@ -19,7 +19,7 @@ setup(
         "webencodings==0.5.1",
     ],
     name="colabohash",
-    version="0.0.0",
+    version="0.0.1",
     description="Hashcat with GPU support in Google Colab runtime",
     url="http://github.com/apogiatzis/colabohash",
     author="Antreas Pogiatzis",
