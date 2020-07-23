@@ -24,6 +24,7 @@ setup(
     author_email="pogiatzis.c.a@gmail.com",
     license="MIT",
     include_package_data=True,
+    package_data={"colabohash":["bin/*"]},
     packages=["colabohash"],
     long_description=long_description,
     long_description_content_type="text/markdown",
