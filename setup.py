@@ -8,7 +8,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 setup(
     install_requires=[
         "html5lib==1.1",
-        "jinja2==2.11.2",
+        "jinja2==2.11.3",
         "markupsafe==1.1.1",
         "mechanize==0.4.5",
         "selenium==3.141.0",
