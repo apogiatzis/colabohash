@@ -13,7 +13,7 @@ setup(
         "mechanize==0.4.5",
         "selenium==3.141.0",
         "six==1.15.0",
-        "urllib3==1.25.9",
+        "urllib3==1.26.5",
         "webencodings==0.5.1",
     ],
     name="colabohash",
