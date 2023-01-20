@@ -10,7 +10,7 @@ setup(
         "html5lib==1.1",
         "jinja2==2.11.2",
         "markupsafe==1.1.1",
-        "mechanize==0.4.5",
+        "mechanize==0.4.6",
         "selenium==3.141.0",
         "six==1.15.0",
         "urllib3==1.25.9",
